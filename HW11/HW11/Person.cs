@@ -23,6 +23,12 @@ using System.Threading.Tasks;
 */
 namespace HW11
 {
+    
+    /* 1. Создайте класс семейства People (люди), который
+представляет собой семейство класса Person (лицо),
+приведенного ниже. Доступ к элементам семейства должен быть
+организован через строковый индексатор, являющийся именем лица,
+КОТОрОе ИДенТИЧНО СВОЙСТВУ Person.Name:*/
     public class Person
     {
         private string name;
@@ -37,12 +43,12 @@ namespace HW11
             get { return age; }
             set { age = value; }
         }
-        // добавил ctor
-        public Person(string name, int age)
-        {
-            Name = name;
-            Age = age;
-        }
+        //добавил ctor
+        //public Person(string name, int age)
+        //{
+        //    Name = name;
+        //    Age = age;
+        //}
         public Person()
         {
 

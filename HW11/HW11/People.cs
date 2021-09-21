@@ -24,37 +24,51 @@ using System.Threading.Tasks;
 */
 namespace HW11
 {
-    public class People : CollectionBase, ICloneable
+    public class People : DictionaryBase,ICloneable
     {
-        //private List<Person> people = new List<Person>();
-        public void Add(Person newPerson)
+        // private List<Person> people = new List<Person>();
+        //private Dictionary<string, Person> people;
+        public void Add(string newId,Person newPerson)
         {
-            List.Add(newPerson);
+            Dictionary.Add(newId, newPerson);
         }
-        public void Remove(Person oldPerson)
+        public void Remove(string personId)
         {
-            List.Remove(oldPerson);
+            Dictionary.Remove(personId);
         }
-        public People() { }
-        public Person this[int personIndex]
-            {
-            get { return (Person)List[personIndex]; }
-            set { List[personIndex] = value; }
-            }
+        public People()
+        {
+            
+        }
+        public Person this[string personId]
+        {
+            get { return (Person)Dictionary[personId]; }
+            
+            
+        }
+        //public Person this[int personIndex]
+        //{
+        //    get { return (Person)List[personIndex]; }
+        //    set { List[personIndex] = value; }
+        //}
+        //public Person this[string name]
+        //{
+        //    get { return people.FirstOrDefault(person => person.Name == name); }
+        //}
         /* 3. Добавьте в класс People метод Getoidesto, который будет
 возвращать массив объектов Person с наибольшим значением
 свойства Age (этот массив состоит из одного и более объектов,
 поскольку значение данного свойства может оказаться одинаковым
 у нескольких элементов). Для этого воспользуйтесь перегруженными
 операторами, определенными выше.  */
-      /*  Person[] Getoidesto()
-        {
-            return Person[];
-        }
-      */
-/* 4. Реализуйте В Классе People интерфейс ICloneable,
-который бы обеспечивал выполнение глубокого копирования. */
-         
+        /*  Person[] Getoidesto()
+          {
+              return Person[];
+          }
+        */
+        /* 4. Реализуйте В Классе People интерфейс ICloneable,
+        который бы обеспечивал выполнение глубокого копирования. */
+
         public object Clone()
         {
             People clone = new People();
