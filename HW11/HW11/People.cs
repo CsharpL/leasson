@@ -62,7 +62,7 @@ namespace HW11
         поскольку значение данного свойства может оказаться одинаковым
         у нескольких элементов). Для этого воспользуйтесь перегруженными
         операторами, определенными выше.  */
-        public Person[] Getoidesto(Person person)
+        public Person[] Getoidesto()
           {
                 Person[] mas = new Person[4];
                 for (int i = 0; i < mas.Length; i++)

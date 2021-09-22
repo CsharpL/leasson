@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +25,11 @@ namespace HW11
             people.Add("serg", person4);
             Person result = people["serg"];
             Console.WriteLine(result.Name + result.Age);
-            //foreach ( pers in people)
-            //{
-            //    Console.WriteLine($"{pers} ");
-            //}
-
-            // перегрзуки опер
+            foreach (var pers in people)
+            {
+                Console.WriteLine($"{((Person)pers).Name} ");
+            }
+            //перегрзуки опер
             //people.GetPeople()
 
 
