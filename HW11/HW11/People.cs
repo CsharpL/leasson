@@ -32,6 +32,7 @@ namespace HW11
         {
             Dictionary.Add(newId, newPerson);
         }
+        // а нужен ли Remove?
         public void Remove(string personId)
         {
             Dictionary.Remove(personId);
@@ -43,8 +44,8 @@ namespace HW11
         public Person this[string personId]
         {
             get { return (Person)Dictionary[personId]; }
-            
-            
+            //set {Dictionary[personId] = value; }
+         
         }
         //public Person this[int personIndex]
         //{
@@ -56,16 +57,26 @@ namespace HW11
         //    get { return people.FirstOrDefault(person => person.Name == name); }
         //}
         /* 3. Добавьте в класс People метод Getoidesto, который будет
-возвращать массив объектов Person с наибольшим значением
-свойства Age (этот массив состоит из одного и более объектов,
-поскольку значение данного свойства может оказаться одинаковым
-у нескольких элементов). Для этого воспользуйтесь перегруженными
-операторами, определенными выше.  */
-        /*  Person[] Getoidesto()
+        возвращать массив объектов Person с наибольшим значением
+        свойства Age (этот массив состоит из одного и более объектов,
+        поскольку значение данного свойства может оказаться одинаковым
+        у нескольких элементов). Для этого воспользуйтесь перегруженными
+        операторами, определенными выше.  */
+        public Person[] Getoidesto(Person person)
           {
-              return Person[];
+                Person[] mas = new Person[4];
+                for (int i = 0; i < mas.Length; i++)
+                {
+                    mas[i] = person;
+                }
+                Array.Sort(mas);
+            if (mas[0].Age > mas[1].Age)
+            {
+                return mas; //???
+            }
+            return null;// ???
           }
-        */
+        
         /* 4. Реализуйте В Классе People интерфейс ICloneable,
         который бы обеспечивал выполнение глубокого копирования. */
 

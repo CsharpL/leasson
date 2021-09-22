@@ -10,22 +10,29 @@ namespace HW11
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
-            person.Name = "toly";
-            person.Age = 39;
+            Person person = new Person{Name = "toly",Age = 39};
+            Person person2 = new Person{Name = "sasha",Age = 34};
+            Person person3 = new Person{Name = "dima",Age = 32};
+            Person person4 = new Person();
+            person4.Name = "sergey";
+            person4.Age = 42;
+
             People people = new People();
             people.Add("toly", person);
-            Person result = people["toly"];
-            Console.WriteLine(result.Name);
-            
-            
-            
+            people.Add("sasha", person2);
+            people.Add("dima", person3);
+            people.Add("serg", person4);
+            Person result = people["serg"];
+            Console.WriteLine(result.Name + result.Age);
+            //foreach ( pers in people)
+            //{
+            //    Console.WriteLine($"{pers} ");
+            //}
 
             // перегрзуки опер
-            
-            //Person person2 = new Person();
-            //person2.Name = "sasha";
-            //person2.Age = 34;
+            //people.GetPeople()
+
+
             //Console.WriteLine($"result true = {person > person2}");
             //Console.WriteLine($"result false = {person < person2}");
             //Console.WriteLine($"result true = {person >= person2}");
