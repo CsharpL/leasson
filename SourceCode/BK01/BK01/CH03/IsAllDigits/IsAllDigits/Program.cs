@@ -6,47 +6,58 @@ namespace IsAllDigits
     {
         static void Main(string[] args)
         {
-            // Input a string from the keyboard.
-            Console.WriteLine("Enter an integer number");
-            string s = Console.ReadLine();
+            //    // Input a string from the keyboard.
+            //    Console.WriteLine("Enter an integer number");
+            //    string s = Console.ReadLine();
 
-            // First check to see if this could be a number.
-            if (!IsAllDigits(s)) // Call the special method.
-            {
-                Console.WriteLine("Hey! That isn't a number");
-            }
-            else
-            {
-                // Convert the string into an integer.
-                int n = Int32.Parse(s);
+            //    // First check to see if this could be a number.
+            //    if (!IsAllDigits(s)) // Call the special method.
+            //    {
+            //        Console.WriteLine("Hey! That isn't a number");
+            //    }
+            //    else
+            //    {
+            //        // Convert the string into an integer.
+            //        int n = Int32.Parse(s);
 
-                // Now write out the number times 2.
-                Console.WriteLine("2 * " + n + " = " + (2 * n));
-            }
+            //        // Now write out the number times 2.
+            //        Console.WriteLine("2 * " + n + " = " + (2 * n));
+            //    }
 
-            // Wait for user to acknowledge the results.
+            //    // Wait for user to acknowledge the results.
+            //    Console.WriteLine("Press Enter to terminate...");
+            //    Console.Read();
+            //}
+
+            //// IsAllDigits -- Return true if all characters
+            ////   in the string are digits.
+            //public static bool IsAllDigits(string raw)
+            //{
+            //    // First get rid of any benign characters at either end;
+            //    // if there's nothing left, you don't have a number.
+            //    string s = raw.Trim();  // Ignore white space on either side.
+            //    if (s.Length == 0) return false;
+
+            //    // Loop through the string.
+            //    for (int index = 0; index < s.Length; index++)
+            //    {
+            //        // A nondigit indicates that the string probably isn’t a number.
+            //        if (Char.IsDigit(s[index]) == false) return false;
+            //    }
+
+            //    // No nondigits found; it's probably okay.
+            //    return true;
+            string name = "chuk";
+            string properchar = char.ToUpper(name[0]).ToString() + name.Substring(1,name.Length-1);
+            Console.WriteLine(properchar);
+            string p = name.Substring(1, name.Length - 1);
+
+            string b = name.Substring(1, name.Length -2);
+            Console.WriteLine(b);
+         // Wait for user to acknowledge the results.
             Console.WriteLine("Press Enter to terminate...");
             Console.Read();
         }
 
-        // IsAllDigits -- Return true if all characters
-        //   in the string are digits.
-        public static bool IsAllDigits(string raw)
-        {
-            // First get rid of any benign characters at either end;
-            // if there's nothing left, you don't have a number.
-            string s = raw.Trim();  // Ignore white space on either side.
-            if (s.Length == 0) return false;
-
-            // Loop through the string.
-            for (int index = 0; index < s.Length; index++)
-            {
-                // A nondigit indicates that the string probably isn’t a number.
-                if (Char.IsDigit(s[index]) == false) return false;
-            }
-
-            // No nondigits found; it's probably okay.
-            return true;
-        }
     }
 }
